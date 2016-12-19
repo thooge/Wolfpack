@@ -83,6 +83,7 @@ def quote(text):
 # Time
 version = getVersion()
 generated = time.strftime("%d.%m.%Y %H:%M")
+gen_year = time.strftime("%Y")
 
 def namesort(a, b):
 	return cmp(a['name'], b['name'])
@@ -112,6 +113,7 @@ text = template.read()
 template.close()
 
 text = text.replace('{GENERATED}', generated)
+text = text.replace('{GEN_YEAR}', gen_year)
 text = text.replace('{VERSION}', version)
 text = text.replace('{OVERVIEW}', overview)
 
@@ -129,6 +131,7 @@ for command in commands:
 	text = text.replace('{SHORTDESC}', command['description'])
 	text = text.replace('{OVERVIEW}', overview)
 	text = text.replace('{GENERATED}', generated)
+	text = text.replace('{GEN_YEAR}', gen_year)
 	text = text.replace('{VERSION}', version)
 
 	if len(command['usage']) > 0:
@@ -175,6 +178,7 @@ template.close()
 
 text = text.replace('{OTHEREVENTS}', overview)
 text = text.replace('{GENERATED}', generated)
+text = text.replace('{GEN_YEAR}', gen_year)
 text = text.replace('{VERSION}', version)
 
 output = open('webroot/events.html', "wt")
@@ -195,6 +199,7 @@ for event in events:
 	text = text.replace('{NOTES}', "<strong>Notes:</strong><br>%s<br><br>" % event['notes'])
 	text = text.replace('{OTHEREVENTS}', overview)
 	text = text.replace('{GENERATED}', generated)
+	text = text.replace('{GEN_YEAR}', gen_year)
 	text = text.replace('{VERSION}', version)
 
 	output = open('webroot/event_%s.html' % event['name'].lower(), "wt")
@@ -237,6 +242,7 @@ template.close()
 
 text = text.replace('{OVERVIEW}', overview)
 text = text.replace('{GENERATED}', generated)
+text = text.replace('{GEN_YEAR}', gen_year)
 text = text.replace('{VERSION}', version)
 
 output = open('webroot/objects.html', "wt")
@@ -274,6 +280,7 @@ for object in objects:
 	template.close()
 
 	text = text.replace('{GENERATED}', generated)
+	text = text.replace('{GEN_YEAR}', gen_year)
 	text = text.replace('{VERSION}', version)
 
 	# Compile an overview
@@ -447,6 +454,7 @@ template.close()
 
 text = text.replace('{OVERVIEW}', overview)
 text = text.replace('{GENERATED}', generated)
+text = text.replace('{GEN_YEAR}', gen_year)
 text = text.replace('{VERSION}', version)
 
 output = open('webroot/modules.html', "wt")
@@ -472,6 +480,7 @@ for module in modules:
 	template.close()
 
 	text = text.replace('{GENERATED}', generated)
+	text = text.replace('{GEN_YEAR}', gen_year)
 	text = text.replace('{VERSION}', version)
 
 	# Create a function overview first
@@ -632,6 +641,7 @@ text = template.read()
 template.close()
 
 text = text.replace('{GENERATED}', generated)
+text = text.replace('{GEN_YEAR}', gen_year)
 text = text.replace('{VERSION}', version)
 text = text.replace('{SHORTVERSION}', str(getVersionNumber()))
 text = text.replace('{COMMANDS}', str(len(commands)))
