@@ -24,15 +24,13 @@ img {
 <table width="100%"  border="0" cellspacing="0" cellpadding="0">
   <tr brcolor="#004B2C">
     <td bgcolor="#004B2C"><a href="index.html"><img src="top_logo.jpg" width="586" height="87" border="0"/></a></td>
-    <td bgcolor="#004B2C"><!-- SiteSearch Google -->
-      <form method=GET action="http://www.google.com/search">
-        <input type=hidden name=ie value=UTF-8>
-        <input type=hidden name=oe value=UTF-8>
-        <input type=text name=q size=31 maxlength=255 value="">
-        <input type=hidden name=domains value="doc.wpdev.org">
-        <input type=hidden name=sitesearch value="doc.wpdev.org">
+    <td bgcolor="#004B2C">
+      <form method="get" action="/cgi-bin/htsearch">
+        <input type="hidden" name="config" value="wolfpack">
+        <input type="hidden" name="restrict" value="">
+        <input type="hidden" name="exclude" value="">
+        <input type="text" name="words" size="31" maxlength="255" value="">
       </form>
-      <!-- SiteSearch Google -->
     </td>
   </tr>
   <tr>
@@ -64,13 +62,14 @@ img {
         <a href="events.html">Read more... ({EVENTS} events)</a><br />
       </td>
       <td width="33%" class="text"><span class="sectiontitle">DEFINITION TAGS</span><br />
-        This section provides an overview over the tags used in the Wolfpack XML definitions. <a href="http://www.wpdev.org/wiki/index.php/Definitions">Read more...</a> </td>
+        This section provides an overview over the tags used in the Wolfpack XML definitions.
+        <a href="http://www.hoogi.de/wolfpack/wiki/doku.php?id=definitions">Read more...</a> </td>
       <td width="33%" class="text"><span class="sectiontitle">MISCELLANEOUS</span><br />
         <a href="introduction.html">Introduction to Wolfpack</a><br />
         <a href="FAQ.html">FAQ</a><br />
-        <a href="http://doc.wpdev.org/ChangeLog.wolfpack">Changelog</a><img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /><br />
-        <a href="http://doc.wpdev.org/formats/">File Formats</a> <img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /><br />
-        <a href="http://doc.wpdev.org/wolfpack-{SHORTVERSION}-doc.zip">Download Documentation</a> <img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /> </td>
+        <a href="http://www.hoogi.de/wolfpack/docs/ChangeLog.wolfpack">Changelog</a><img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /><br />
+        <a href="http://www.hoogi.de/wolfpack/docs/formats/">File Formats</a> <img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /><br />
+        <a href="http://www.hoogi.de/wolfpack/docs/wolfpack-{SHORTVERSION}-doc.zip">Download Documentation</a> <img src="external_link.gif" alt="External Link" width="11" height="12" border="0" align="bottom" /> </td>
     </tr>
   </table>
   <br />
