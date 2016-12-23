@@ -3,16 +3,16 @@ TARGET = uoclient
 TEMPLATE = app
 OBJECTS_DIR = obj
 
-QT += core gui network  xml opengl
+QT += core gui network xml opengl
 CONFIG += qt thread exceptions flat
 CONFIG += debug
 
 win32:CONFIG += windows
 unix:CONFIG += x11 
 unix:INCLUDEPATH += /usr/include/GL /usr/include/X11 /usr/include
-win32:INCLUDEPATH += 3rdparty/openal/include C:/Python25/include/
+win32:INCLUDEPATH += 3rdparty/openal/include C:/Python27/include/
 # FIXME: 64bit windows
-win32:LIBPATH+= 3rdparty/openal/libs/Win32/ C:/Python25/libs/
+win32:LIBPATH+= 3rdparty/openal/libs/Win32/ C:/Python27/libs/
 
 # No idea what it does
 #DEFINES += QT_CLEAN_NAMESPACE QT_COMPAT_WARNINGS
@@ -29,10 +29,11 @@ win32:DEFINES -= UNICODE
 #win32:LIBS += advapi32.lib shell32.lib openal32.lib
 win32:LIBS += -ladvapi32 -lshell32 -lopenal32
 
-unix:LIBS += -lGL -lGLU -lpython2.5 -lopenal
+unix:LIBS += -lGL -lGLU -lpython2.7 -lopenal
 
 DEPENDPATH += src
-INCLUDEPATH += include;libs/include
+win32:INCLUDEPATH += include;libs/include
+unix:INCLUDEPATH += include /usr/include/python2.7
 
 # MAIN INCLUDES
 HEADERS += \
@@ -245,7 +246,7 @@ SOURCES += \
 win32:SOURCES += \
 	src/windows/gmtoolwnd.cpp
 
-INTERFACES =
+FORMS =
 
 #TRANSLATIONS = \
 #	languages/wolfpack_pt_br.ts \
