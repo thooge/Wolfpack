@@ -1,0 +1,101 @@
+.TH "WOLFPACK" "6" "December 24, 2016" "Vers. 12.9.17 beta" "Games"
+.SH "NAME"
+wolfpack \- Ultima Online Server Emulation Program
+
+.SH "SYNOPSIS"
+.B wolfpack
+.RI [ options \]
+
+.SH "DESCRIPTION"
+.hy
+.ad b
+The Wolfpack project is an effort to develop and maintain an open\-source
+Ultima Online server that is secure, stable and extensible, providing users
+with the ability to create their own unique shards.
+
+Wolfpack is an international collaboration. The core developers come from
+all over the world, including Germany, Brazil, and the US.
+
+Shard admins and staff are encouraged to contact us to discuss their
+experiences with Wolfpack. We are very interested in hearing about 
+everything: the good, the bad, and the ugly.
+We know we can't find every bug, but with your help we will fix them as
+fast as we can. 
+
+.SH "OPTIONS"
+The program follows the usual GNU command line syntax.
+Long options starting with two dashes are not yet supported
+but hopefully will be in the future.
+
+A summary of options is included below:
+.TP
+\fB\-c\fR configfile, \fB\-\-config\fR configfile 
+use an alternative configuration file
+.TP
+\fB\-d\fR, \fB\-\-daemon\fR 
+run as daemon
+.TP
+\fB\-h\fR, \fB\-\-help\fR 
+show summary of options
+.TP
+\fB\-v\fR, \fB\-\-version\fR 
+show version of the program
+.TP
+\fB\-\-nologin\fR
+disable the login for normal players, acccess for administrative
+tasks is available so login can manually be enabled 
+.TP
+\fB\-\-nosyslog\fR 
+turns off use of syslog(3)
+
+.SH "SIGNALS"
+***to be checked and/or implemented***
+.br
+The following signals have the specified effect when sent to the
+daemon process using the kill(1) command:
+.PP
+.ad l
+.TP 3
+\(bu
+SIGUSR1
+.br
+switches from normal operation to maintenance mode. 
+When entering maintenance mode all players are forced to logoff,
+a worldsave is initiated.
+.TP
+\(bu
+SIGHUP
+.br
+initiates a configuration reload. It happens in a configurable
+time offset, a warning broadcast is sent to all logged in players.
+.TP
+\(bu
+SIGTERM
+.br
+initiates an immediate shutdown. No world-safe happens,
+this ist really a emergency shutdown.
+.TP
+\(bu
+SIGKILL
+.br
+should never be used. It is only for broken software...
+.PP
+.ad b
+All other signals are ignored.
+
+.SH "FILES"
+/etc/wolfpack.xml
+
+.SH "SEE ALSO"
+wolfpack\-client(6)
+
+.SH "BUGS"
+To report a bug, please visit \fIhttp://www.hoogi.de/wolfpack/bt/\fR
+
+.SH "AUTHOR"
+The wolfpack emulator was written by the wolfpack project, for
+detailed information see the project homepage at 
+\fIhttp://www.hoogi.de/wolfpack/\fR
+
+This manual page was written by Thomas Hooge <thomas@hoogi.de> for the
+Debian project (but may be used by others).

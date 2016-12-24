@@ -402,7 +402,8 @@ def main():
 	parser.add_option("--enable-translation", action="store_true", dest="enable_translation", help="Enable non-English language support.")
 	parser.add_option("--enable-gui", action="store_true", dest="enable_gui", help="Enables Graphic User Interface" )
 	parser.add_option("--dry-run", action="store_true", dest="dry_run", help="Run checks without changing config.pri" )
-    
+	parser.add_option("--prefix", dest="prefix", help="Install files in PREFIX (default: /usr/local)")
+
 	if sys.platform == "win32":
 		parser.set_defaults(enable_gui=True)
 	else:
@@ -460,6 +461,13 @@ def main():
 		CONFIG += "release warn_off "
 		sys.stdout.write("Release\n")
 
+	# if --prefix
+	sys.stdout.write("Installation prefix:                    ")
+	if options.prefix:
+		sys.stdout.write("%s\n" % options.prefix)
+	else:
+		sys.stdout.write("/usr/local\n")
+
 	# if --enable-gui
 	sys.stdout.write("GUI:                                    ")
 	if not options.enable_gui:
@@ -488,6 +496,7 @@ def main():
 	config.write("CONFIG += %s\n" % CONFIG)
 	config.write("LIBS += $$PY_LIBDIR $$MySQL_LIBDIR \n")
 	config.write("INCLUDEPATH += $$PY_INCDIR $$MySQL_INCDIR \n")
+	config.write("PREFIX=%s\n" % options.prefix)
 	config.close()
 
 	sys.stdout.write("\nGenerating makefile... ")

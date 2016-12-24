@@ -232,3 +232,28 @@ QMAKE_TARGET_COMPANY = Wolfpack Development Team
 QMAKE_TARGET_PRODUCT = Wolfpack
 QMAKE_TARGET_DESCRIPTION = Ultima Online(tm) Server Software
 QMAKE_TARGET_COPYRIGHT = Copyright (c) 2000-2016 Wolfpack Development Team
+
+
+# Install the complete package according to some rules:
+# (see Filesystem Hierarchy Standard)
+
+isEmpty(PREFIX) {
+	PREFIX = /usr/local
+}
+
+unix {
+	target.path = $$PREFIX/games
+	config.files = ../release/wolfpack.xml
+	config.path = $$PREFIX/etc
+	scripts.files = $$WPSCRIPTS
+	scripts.path = $$PREFIX/share/wolfpack
+	definitions.files = $$WPDEFINITIONS
+	definitions.path = $$PREFIX/share/wolfpack
+	web.files = ../release/web/
+	web.path = $$PREFIX/share/wolfpack/web
+	documentation.files = $$DISTFILES
+	documentation.path = $$PREFIX/share/doc/wolfpack
+	man.files = wolfpack.6
+	man.path = $$PREFIX/share/man/man6
+	INSTALLS += target config scripts definitions web documentation man
+}
