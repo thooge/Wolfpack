@@ -1,4 +1,4 @@
-
+#include <GL/glu.h>
 #include "mainwindow.h"
 #include "gui/gui.h"
 #include "gui/cursor.h"
