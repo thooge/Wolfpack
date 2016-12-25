@@ -206,7 +206,6 @@ DISTFILES += \
 	../release/COPYING \
 	../release/COPYRIGHT \
 	../release/INSTALL \
-	../release/LICENSE.GPL \
 	../release/NEWS \
 	../release/README
 

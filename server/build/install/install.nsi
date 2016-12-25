@@ -31,7 +31,7 @@ SetCompressor /solid lzma
 !insertmacro MUI_PAGE_WELCOME
 ; License page
 !define MUI_LICENSEPAGE_RADIOBUTTONS
-!insertmacro MUI_PAGE_LICENSE "..\..\release\LICENSE.GPL"
+!insertmacro MUI_PAGE_LICENSE "..\..\release\COPYING"
 ; Directory page
 !insertmacro MUI_PAGE_DIRECTORY
 ; Start menu page
@@ -88,7 +88,6 @@ Section "Core" SEC01
   File "..\..\release\COPYING"
   File "..\..\release\COPYRIGHT"
   File "..\..\release\INSTALL"
-  File "..\..\release\LICENSE.GPL"
   File "..\..\release\NEWS"
   File "..\..\release\README"
   File "..\*.sql"
