@@ -7,7 +7,7 @@
 // Based on article written by:
 //     John Robbins - Microsoft Systems Journal Bugslayer Column - August '98
 //
-// Wolfpack Website: http://developer.berlios.de/projects/wolfpack/
+// Wolfpack Website: http://www.hoogi.de/wolfpack/
 //=========================================================================================
 
 

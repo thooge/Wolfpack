@@ -21,14 +21,14 @@ def writeCopyright( f ):
  *\n\
  * You should have received a copy of the GNU General Public License\n\
  * along with this program; if not, write to the Free Software\n\
- * Foundation, Inc., 59 Temple Palace - Suite 330, Boston, MA 02111-1307, USA.\n\
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.\n\
  *\n\
  * In addition to that license, if you are running this program or modified\n\
  * versions of it on a public system you HAVE TO make the complete source of\n\
  * the version used by you available or provide people with a location to\n\
  * download it.\n\
  *\n\
- * Wolfpack Homepage: http://developer.berlios.de/projects/wolfpack/\n\
+ * Wolfpack Homepage: http://www.hoogi.de/wolfpack/\n\
  */\n\n" % t.year )
     f.write("/****************************************************************************\n"
             "** Network Packet Code                                                       \n"
